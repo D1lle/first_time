@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 SECRET_KEY = '$34)zf()f9y=q%wp^l6fdq&0g5(+*^(kp(jk)wg(fv@afh1_+h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
@@ -110,6 +111,10 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',          # бекенд авторизации через ВКонтакте
     'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
 )
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7358175'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'mC7efrZOa9baEUTHAu8x'
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['friends']
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

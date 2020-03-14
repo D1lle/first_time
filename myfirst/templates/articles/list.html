@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %}Здесь должна быть авторизация вк{% endblock %}
+{% block title %}
+Тестовый сайт
+{% endblock %}
 
 {% block content %}
 
 
-Авторизация вк
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+<script type="text/javascript">
+  VK.init({apiId: 7358175});
+</script>
 
+<!-- VK Widget -->
+<div id="vk_auth"></div>
+<script type="text/javascript">
+  VK.Widgets.Auth("vk_auth", {"authUrl":"/dev/Login"});
+</script>
 
 {% endblock %}
